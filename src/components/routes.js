@@ -3,6 +3,8 @@ import { Home, Bus, Cart, About, Sandwiches }
   from './app/AppContent'
 import CategoriaList from './categorias/List'
 import CategoriaForm from './categorias/Form'
+import ProductoList from './productos/List'
+import ProductoForm from './productos/Form'
 import Login from './Login'
 
 const routese = [
@@ -82,6 +84,29 @@ const routes = [
         title: 'Categoria Edit!',
         icon: 'send',
         component: CategoriaForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/productos/list',
+        exact: true,
+        title: 'Productos!',
+        icon: 'send',
+        component: ProductoList
+      },
+      {
+        path: '/catalogo/productos/new',
+        exact: true,
+        title: 'Producto New!',
+        icon: 'send',
+        component: ProductoForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/productos/edit/:id',
+        exact: true,
+        title: 'Producto Edit!',
+        icon: 'send',
+        component: ProductoForm,
         novisible: true
       },
     ]

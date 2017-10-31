@@ -7,7 +7,7 @@ import TextField from 'material-ui/TextField';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 
-import { getList, del } from '../../actions/categoria-action'
+import { getList, del } from '../../actions/producto-action'
 import { connect } from 'react-redux'
 
 import Button from 'material-ui/Button';
@@ -29,7 +29,7 @@ class List extends Component {
     }
 
     handleClick = () => {
-        this.props.history.push('/catalogo/categorias/new');
+        this.props.history.push('/catalogo/productos/new');
     }
 
     render() {
@@ -91,7 +91,7 @@ class List extends Component {
                                         <TableCell >{d.nombre}</TableCell>
                                         
                                         <TableCell >
-                                            <Link to={`/catalogo/categorias/edit/${d.id}`} className="ui basic button green">Edit</Link>
+                                            <Link to={`/catalogo/productos/edit/${d.id}`} className="ui basic button green">Edit</Link>
                                         </TableCell>
                                         <TableCell >
                                             <Button onClick={() => del(d.id, this.props.history)} >Delete</Button>
@@ -113,7 +113,7 @@ List.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        list: state.categoria.list
+        list: state.producto.list
     }
 }
 
