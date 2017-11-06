@@ -122,6 +122,16 @@ class Form extends Component {
                             Name:
                             <input type="text" name="nombre" value={this.state.nombre} onChange={this.handleChange} />
                         </label>
+                        <label>
+                            UnidadMed:
+                            <input type="text" name="UnidadMed" value={this.state.UnidadMed} onChange={this.handleChange} />
+                        </label>
+                        <br />
+
+                        <label>
+                            almacen:
+                            <input type="text" name="almacen" value={this.state.almacen} onChange={this.handleChange} />
+                        </label>
                         <input type="submit" value="Submit" />
                     </form>
                 </CardContent>

@@ -78,7 +78,10 @@ class List extends Component {
                             <TableHead>
                                 <TableRow>
                                     <TableCell>#</TableCell>
+                                    <TableCell >codigo</TableCell>
                                     <TableCell >Nombre</TableCell>
+                                    <TableCell >UnidadMed</TableCell>
+                                    <TableCell >Almacen</TableCell>
                                     <TableCell >Edit</TableCell>
                                     <TableCell >Delete</TableCell>
                                 </TableRow>
@@ -88,8 +91,10 @@ class List extends Component {
                                 {list.map((d, index) =>
                                     <TableRow key={index}>
                                         <TableCell numeric>{index + 1}</TableCell>
+                                        <TableCell >{d.codigo}</TableCell>
                                         <TableCell >{d.nombre}</TableCell>
-                                        
+                                        <TableCell >{d.unidad_med}</TableCell>
+                                        <TableCell >{d.almacen}</TableCell>
                                         <TableCell >
                                             <Link to={`/catalogo/productos/edit/${d.id}`} className="ui basic button green">Edit</Link>
                                         </TableCell>
