@@ -5,7 +5,7 @@ import Avatar from 'material-ui/Avatar'
 //import Typography from 'material-ui/Typography'
 //import TextField from 'material-ui/TextField';
 
-import { save, getById, update } from '../../actions/categoria-action'
+import { save, getById, update } from '../../actions/compra-action'
 import { connect } from 'react-redux'
 
 class Form extends Component {
@@ -88,39 +88,48 @@ class Form extends Component {
     handleSubmit = (event) => {
         const { id } = this.props.match.params
         if (id) {
-            //console.log('handleSubmit state:' + JSON.stringify(this.state))
             this.props.update(this.state, this.props.history)
         } else {
             this.props.save(this.state, this.props.history)
         }
-        //this.props.history.push('/categorias/list');
         event.preventDefault();
     }
 
     render() {
-        //const { data } = this.props
         return (
             <Card>
                 <CardHeader
-                    avatar={
-                        <Avatar aria-label="Recipe" >
-                            C
-                          </Avatar>
-                    }
-                    title="Lista de Categoria"
-                    subheader="Categoria"
-                />
+                avatar={<Avatar aria-label="Recipe" >R</Avatar>}
+                title="Shrimp and Chorizo Paella"
+                subhead="September 14, 2016"
+                subheader="September 14, 2016"
+              />
                 <CardContent>
                     <form onSubmit={this.handleSubmit}>
                         <label>
-                            Codigo:
-                            <input type="text" name="codigo" value={this.state.codigo} onChange={this.handleChange} />
+                            Numero Documento:
+                            <input type="text" name="nro_doc" value={this.state.nro_doc} onChange={this.handleChange} />
+                        </label>
+                        <br />
+                        <label>
+                            Precio Total:
+                            <input type="text" name="nro_doc" value={this.state.nro_doc} onChange={this.handleChange} />
+                        </label>
+                        <br />
+                        <label>
+                            Proveedor:
+                            <input type="text" name="nro_doc" value={this.state.nro_doc} onChange={this.handleChange} />
+                        </label>
+                        <br />
+                        <label>
+                            Almacen:
+                            <input type="text" name="nro_doc" value={this.state.nro_doc} onChange={this.handleChange} />
                         </label>
                         <br />
                         <br></br>
                         <label>
-                            Name:
-                            <input type="text" name="nombre" value={this.state.nombre} onChange={this.handleChange} />
+                            Comprador:
+                            <input type="text" name="fecha" value={this.state.fecha} onChange={this.handleChange} />
                         </label>
                         <input type="submit" value="Submit" />
                     </form>
@@ -137,7 +146,7 @@ Form.propTypes = {
 const mapStateToProps = (state, props) => {
     if (props.match.params.id) {
         return {
-            data: state.categoria.list.find(item => item.id + '' === props.match.params.id + '')
+            data: state.compra.list.find(item => item.id + '' === props.match.params.id + '')
         }
     }
     return {

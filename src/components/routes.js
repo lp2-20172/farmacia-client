@@ -5,6 +5,8 @@ import CategoriaList from './categorias/List'
 import CategoriaForm from './categorias/Form'
 import ProductoList from './productos/List'
 import ProductoForm from './productos/Form'
+import CompraList from './compras/List'
+import CompraForm from './compras/Form'
 import Login from './Login'
 
 const routese = [
@@ -20,7 +22,7 @@ const routese = [
 const routes = [
   {
     path: '/home',
-    title: 'Home!',
+    title: 'Home',
     icon: 'home',
     exact: true,
     component: Home
@@ -29,14 +31,14 @@ const routes = [
 
   {
     path: '/sandwiches',
-    title: 'sandwiches!',
-    icon: 'send',
+    title: 'sandwiches',
+    icon: 'warning',
     component: Sandwiches
   },
   {
     path: '/tacos',
     title: 'tacos!',
-    icon: 'list',
+    icon: 'view_list',
     component: Content,
     routes: [
       {
@@ -59,15 +61,15 @@ const routes = [
   },
   {
     path: '/catalogo',
-    title: 'Catalogo!',
-    icon: 'list',
+    title: 'Catalogo',
+    icon: 'chrome_reader_mode',
     component: Content,
     routes: [
       {
         path: '/catalogo/categorias/list',
         exact: true,
-        title: 'Categorias!',
-        icon: 'send',
+        title: 'Categorias',
+        icon: 'local_mall',
         component: CategoriaList
       },
       {
@@ -89,14 +91,14 @@ const routes = [
       {
         path: '/catalogo/productos/list',
         exact: true,
-        title: 'Productos!',
+        title: 'Productos',
         icon: 'send',
         component: ProductoList
       },
       {
         path: '/catalogo/productos/new',
         exact: true,
-        title: 'Producto New!',
+        title: 'Producto New',
         icon: 'send',
         component: ProductoForm,
         novisible: true
@@ -104,9 +106,31 @@ const routes = [
       {
         path: '/catalogo/productos/edit/:id',
         exact: true,
-        title: 'Producto Edit!',
+        title: 'Producto Edit',
         icon: 'send',
         component: ProductoForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/compras/list',
+        exact: true,
+        title: 'Compras',
+        icon: 'shopping_cart',
+        component: CompraList
+      },
+      {
+        path: '/catalogo/compras/new',
+        exact: true,
+        title: 'Nueva Compras',
+        component: CompraForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/compras/edit/:id',
+        exact: true,
+        title: 'Editar Compra',
+        icon: 'shopping_cart',
+        component: CompraForm,
         novisible: true
       },
     ]

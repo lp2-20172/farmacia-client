@@ -7,7 +7,7 @@ import TextField from 'material-ui/TextField';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 
-import { getList, del } from '../../actions/categoria-action'
+import { getList, del } from '../../actions/compra-action'
 import { connect } from 'react-redux'
 
 import Button from 'material-ui/Button';
@@ -29,7 +29,7 @@ class List extends Component {
     }
 
     handleClick = () => {
-        this.props.history.push('/catalogo/categorias/new');
+        this.props.history.push('/catalogo/compras/new');
     }
 
     render() {
@@ -45,14 +45,11 @@ class List extends Component {
 
             <Card>
                 <CardHeader
-                    avatar={
-                        <Avatar aria-label="Recipe" >
-                            C
-                          </Avatar>
-                    }
-                    title="Lista de Categoria"
-                    subheader="Categoria"
-                />
+                avatar={<Avatar aria-label="Recipe" >C</Avatar>}
+                title="Lista de Compras"
+                subhead="Noviembre 7, 2017"
+                subheader="Noviembre 7, 2017"
+              />
 
                 <CardContent>
                     <Typography component="p">
@@ -67,7 +64,7 @@ class List extends Component {
                         margin="normal"
                     />
 
-                    <Button fab color="primary" aria-label="add" onClick={this.handleClick}>
+                    <Button fab color="primary" aria-label="edit" onClick={this.handleClick}>
                         <AddIcon />
                     </Button>
 
@@ -78,9 +75,12 @@ class List extends Component {
                             <TableHead>
                                 <TableRow>
                                     <TableCell>#</TableCell>
-                                    <TableCell >Nombre</TableCell>
-                                    <TableCell >Edit</TableCell>
-                                    <TableCell >Delete</TableCell>
+                                    <TableCell >Nr Documento</TableCell>
+                                    <TableCell >Precio Total</TableCell>
+                                    <TableCell >Proveedor</TableCell>
+                                    <TableCell >Almacen</TableCell>
+                                    <TableCell >Comprador</TableCell>
+                                    <TableCell >Opciones</TableCell>
                                 </TableRow>
                             </TableHead>
 
@@ -88,12 +88,15 @@ class List extends Component {
                                 {list.map((d, index) =>
                                     <TableRow key={index}>
                                         <TableCell numeric>{index + 1}</TableCell>
-                                        <TableCell >{d.nombre}</TableCell>
+                                        <TableCell >{d.nro_doc}</TableCell>
+                                        <TableCell >{d.precio_total}</TableCell>
+                                        <TableCell >{d.proveedor}</TableCell>
+                                        <TableCell >{d.almacen}</TableCell>
+                                        <TableCell >{d.comprador}</TableCell>
                                         
                                         <TableCell >
-                                            <Link to={`/catalogo/categorias/edit/${d.id}`} className="ui basic button green">Edit</Link>
-                                        </TableCell>
-                                        <TableCell >
+                                            <Link to={`/catalogo/compras/edit/${d.id}`} className="ui basic button green">Edit</Link>
+                                        
                                             <Button onClick={() => del(d.id, this.props.history)} >Delete</Button>
                                         </TableCell>
                                     </TableRow>
@@ -113,7 +116,7 @@ List.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        list: state.categoria.list
+        list: state.compra.list
     }
 }
 
