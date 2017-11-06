@@ -45,8 +45,8 @@ const Core = ({ routes }) => (
     <h2>Core</h2>
     <ul>
       <li><Link to="/Core/users">Users</Link></li>
-      <li><Link to="/Core/opciones">Opciones</Link></li>
-      <li><Link to="/Core/person/8">Person</Link></li>
+      
+      <li><Link to="/Core/person">Person</Link></li>
 
 
     </ul>
@@ -58,7 +58,7 @@ const Core = ({ routes }) => (
 )
 
 const Users = () => <h3>Users</h3>
-const Opciones= () => <h3>Opciones</h3>
+
 
 class Person extends React.Component {
   render() {
@@ -75,7 +75,7 @@ class Person extends React.Component {
 
 
 
-export {Content, Farmacenter, Core, Users, Opciones, Person, Farmacia}
+export {Content, Farmacenter, Core, Users, Person, Farmacia}
 
 
 /*

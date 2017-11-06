@@ -1,7 +1,10 @@
 import { Content } from './app/AppContent'
-import { Farmacenter, Users, Opciones, Person, Farmacia }
+import { Farmacenter, Farmacia }
   from './app/AppContent'
 import CategoriaList from './categorias/List'
+import UsersList from './users/List'
+import UsersForm from './users/Form'
+// import PersonList from './person/List'
 import CategoriaForm from './categorias/Form'
 import ProductoList from './productos/List'
 import ProductoForm from './productos/Form'
@@ -34,27 +37,28 @@ const routes = [
     component: Farmacia
   },
   {
-    path: '/Core',
-    title: 'Core',
+    path: '/core/',
+    title: 'core',
     icon: 'list',
     component: Content,
     routes: [
       {
-        path: '/Core/users',
+        path: '/core/users/list',
+        exact: true,
         title: 'users',
         icon: 'send',
-        component: Users
+        component: UsersList
+
+
       },
-      {
-        path: '/core/opciones',
-        component: Opciones
-      },
-      {
-        path: '/core/person/:id',
-        title: 'person',
-        icon: 'send',
-        component: Person
-      }
+      
+      // {
+      //   path: '/core/person/list',
+      //   exact: true,
+      //   title: 'person',
+      //   icon: 'send',
+      //   component: PersonList
+      // }
     ]
   },
   {
