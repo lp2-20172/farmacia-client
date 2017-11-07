@@ -4,7 +4,7 @@ import { Farmacenter, Farmacia }
 import CategoriaList from './categorias/List'
 import UsersList from './users/List'
 import UsersForm from './users/Form'
-// import PersonList from './person/List'
+import PersonList from './person/List'
 import CategoriaForm from './categorias/Form'
 import ProductoList from './productos/List'
 import ProductoForm from './productos/Form'
@@ -52,13 +52,13 @@ const routes = [
 
       },
       
-      // {
-      //   path: '/core/person/list',
-      //   exact: true,
-      //   title: 'person',
-      //   icon: 'send',
-      //   component: PersonList
-      // }
+      {
+        path: '/core/person/list',
+        exact: true,
+        title: 'person',
+        icon: 'send',
+        component: PersonList
+      }
     ]
   },
   {

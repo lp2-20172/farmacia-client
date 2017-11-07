@@ -17,115 +17,115 @@ import {
 } from 'react-router-dom'
 
 
-// class List extends Component {
-//     componentWillMount() {
-//         this.props.getList("")
-//     }
+class List extends Component {
+    componentWillMount() {
+        this.props.getList("")
+    }
 
-//     change = (e) => {
-//         const q = e.target.value
-//         console.log("q:" + q)
-//         this.props.getList(q)
-//     }
+    change = (e) => {
+        const q = e.target.value
+        console.log("q:" + q)
+        this.props.getList(q)
+    }
 
-    // handleClick = () => {
-    //     this.props.history.push('/core/person/new');
-    // }
+    handleClick = () => {
+        this.props.history.push('/core/person/new');
+    }
 
-    // render() {
-    //     let { list, del } = this.props
-    //     if (list) {
+    render() {
+        let { list, del } = this.props
+        if (list) {
             
-    //     } else{
-    //         list =[]
+        } else{
+            list =[]
 
-    // //     }
+    }
 
-    //     return (
+        return (
 
-    //         <Card>
-    //             <CardHeader
-    //                 avatar={
-    //                     <Avatar aria-label="Recipe" >
-    //                         F
-    //                       </Avatar>
-//     //                 }
-//                     title="User List"
-//                     subheader="Users list"
-//                 />
+            <Card>
+                <CardHeader
+                    avatar={
+                        <Avatar aria-label="Recipe" >
+                            F
+                          </Avatar>
+                    }
+                    title="Person List"
+                    subheader="Person list"
+                />
 
-//                 <CardContent>
-//                     <Typography component="p">
-//                         q={this.props.q}
-//                     </Typography>
+                <CardContent>
+                    <Typography component="p">
+                        q={this.props.q}
+                    </Typography>
 
-//                     <TextField
-//                         id="search"
-//                         label="Search"
-//                         value={this.props.q}
-//                         onChange={this.change}
-//                         margin="normal"
-//                     />
+                    <TextField
+                        id="search"
+                        label="Search"
+                        value={this.props.q}
+                        onChange={this.change}
+                        margin="normal"
+                    />
 
-//                     <Button fab color="primary" aria-label="add" onClick={this.handleClick}>
-//                         <AddIcon />
-//                     </Button>
+                    <Button fab color="primary" aria-label="add" onClick={this.handleClick}>
+                        <AddIcon />
+                    </Button>
 
-//                     <Paper style={{
-//                         overflowX: 'auto',
-//                     }}>
-//                         <Table>
-//                             <TableHead>
-//                                 <TableRow>
-//                                     <TableCell>#</TableCell>
-//                                     <TableCell >Nombre</TableCell>
-//                                     <TableCell >Edit</TableCell>
-//                                     <TableCell >Delete</TableCell>
-//                                 </TableRow>
-//                             </TableHead>
+                    <Paper style={{
+                        overflowX: 'auto',
+                    }}>
+                        <Table>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>#</TableCell>
+                                    <TableCell >Nombre</TableCell>
+                                    <TableCell >Edit</TableCell>
+                                    <TableCell >Delete</TableCell>
+                                </TableRow>
+                            </TableHead>
 
-//                             <TableBody>
-//                                 {list.map((d, index) =>
-//                                     <TableRow key={index}>
-//                                         <TableCell numeric>{index + 1}</TableCell>
-//                                         <TableCell >{d.nombre}</TableCell>
+                            <TableBody>
+                                {list.map((d, index) =>
+                                    <TableRow key={index}>
+                                        <TableCell numeric>{index + 1}</TableCell>
+                                        <TableCell >{d.nombre}</TableCell>
                                         
-//                                         <TableCell >
-//                                             <Link to={`/core/person/edit/${d.id}`} className="ui basic button green">Edit</Link>
-//                                         </TableCell>
-//                                         <TableCell >
-//                                             <Button onClick={() => del(d.id, this.props.history)} >Delete</Button>
-//                                         </TableCell>
-//                                     </TableRow>
-//                                 )}
-//                             </TableBody>
-//                         </Table>
-//                     </Paper>
-//                 </CardContent>
+                                        <TableCell >
+                                            <Link to={`/core/person/edit/${d.id}`} className="ui basic button green">Edit</Link>
+                                        </TableCell>
+                                        <TableCell >
+                                            <Button onClick={() => del(d.id, this.props.history)} >Delete</Button>
+                                        </TableCell>
+                                    </TableRow>
+                                )}
+                            </TableBody>
+                        </Table>
+                    </Paper>
+                </CardContent>
 
-//             </Card>
-//         );
-//     }
-// }
-// List.propTypes = {
-//     list: PropTypes.array
-// }
+            </Card>
+        );
+    }
+}
+List.propTypes = {
+    list: PropTypes.array
+}
 
-// const mapStateToProps = (state) => {
-//     return {
-//         list: state.person.list
-//     }
-// }
+const mapStateToProps = (state) => {
+    return {
+        list: state.person.list
+    }
+}
 
-// /*
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         getList: (q) => { dispatch(getList(q)) },
-//         del: (id, h) => { dispatch(del(id, h)) }
-//     }
-// }
-// */
-// export default connect(mapStateToProps, {
-//     getList,
-//     del
-// })(List)
+/*
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getList: (q) => { dispatch(getList(q)) },
+        del: (id, h) => { dispatch(del(id, h)) }
+    }
+}
+*/
+export default connect(mapStateToProps, {
+    getList,
+    del
+})(List)
