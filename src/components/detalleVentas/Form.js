@@ -5,7 +5,7 @@ import Avatar from 'material-ui/Avatar'
 //import Typography from 'material-ui/Typography'
 //import TextField from 'material-ui/TextField';
 
-import { save, getById, update } from '../../actions/producto-action'
+import { save, getById, update } from '../../actions/detalleVenta-action'
 import { connect } from 'react-redux'
 
 class Form extends Component {
@@ -24,10 +24,8 @@ class Form extends Component {
         super(props);
         this.state = {
             id: props.data ? props.data.id : null,
-            codigo: props.data ? props.data.codigo : '',
-            nombre: props.data ? props.data.nombre : '',
-            unidadMed: props.data ? props.data.unidadMed : '',
-            almacen: props.data ? props.data.almacen : ''
+            
+            nombre: props.data ? props.data.nombre : ''
         }
     }
     /*
@@ -69,11 +67,8 @@ class Form extends Component {
             this.props.getById(id).then(data => {
                 this.setState({
                     id: data.id,
-                    codigo: data.codigo,
-                    nombre: data.nombre,
-                    precioVenta : data.precioVenta,
-                    unidadMed: data.unidadMed,
-                    almacen: data.almacen
+                    
+                    nombre: data.nombre
                 });
             });
         }
@@ -117,38 +112,12 @@ class Form extends Component {
                 />
                 <CardContent>
                     <form onSubmit={this.handleSubmit}>
-                        <label>
-                            Codigo:
-                            <input type="text" name="codigo" value={this.state.codigo} onChange={this.handleChange} />
-                        </label>
+                       
                         <br />
 
                         <label>
-                            Name:
-                            <input type="text" name="nombre" value={this.state.nombre} onChange={this.handleChange} />
-                        </label>
-                        <label>
-                            FechaVen:
-                            <input type="text" name="fechaVen" value={this.state.fechaVen} onChange={this.handleChange} />
-                        </label>
-                        <label>
-                            UnidadMed:
-                            <input type="text" name="unidadMed" value={this.state.unidadMed} onChange={this.handleChange} />
-                        </label>
-                        <br />
-                        <label>
-                            PrecioVenta:
-                            <input type="text" name="precioVenta" value={this.state.precioVenta} onChange={this.handleChange} />
-                        </label>             
-                        <br />
-                        <label>
-                            Almacen:
-                            <input type="text" name="almacen" value={this.state.almacen} onChange={this.handleChange} />
-                        </label>
-                        <br />
-                        <label>
-                            Categoria:
-                            <input type="text" name="categoria" value={this.state.categoria} onChange={this.handleChange} />
+                        cantidad:
+                            <input type="text" name="cantidad" value={this.state.cantidad} onChange={this.handleChange} />
                         </label>
                         <input type="submit" value="Submit" />
                     </form>
@@ -165,7 +134,7 @@ Form.propTypes = {
 const mapStateToProps = (state, props) => {
     if (props.match.params.id) {
         return {
-            data: state.producto.list.find(item => item.id + '' === props.match.params.id + '')
+            data: state.detalleVenta.list.find(item => item.id + '' === props.match.params.id + '')
         }
     }
     return {

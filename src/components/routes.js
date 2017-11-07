@@ -3,8 +3,13 @@ import { Home, Bus, Cart, About, Sandwiches }
   from './app/AppContent'
 import CategoriaList from './categorias/List'
 import CategoriaForm from './categorias/Form'
-import ProductoList from './productos/List'
-import ProductoForm from './productos/Form'
+import ProductoList  from './productos/List'
+import ProductoForm  from './productos/Form'
+import VentaList  from './ventas/List'
+import VentaForm  from './ventas/Form'
+import DetalleVentaList  from './detalleVentas/List'
+import DetalleVentaForm  from './detalleVentas/Form'
+
 import Login from './Login'
 
 const routese = [
@@ -109,6 +114,53 @@ const routes = [
         component: ProductoForm,
         novisible: true
       },
+      {
+        path: '/catalogo/ventas/list',
+        exact: true,
+        title: 'Ventas!',
+        icon: 'send',
+        component: VentaList
+      },
+      {
+        path: '/catalogo/ventas/new',
+        exact: true,
+        title: 'Venta New!',
+        icon: 'send',
+        component: VentaForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/ventas/edit/:id',
+        exact: true,
+        title: 'Venta Edit!',
+        icon: 'send',
+        component: VentaForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/detalleVentas/list',
+        exact: true,
+        title: 'DetalleVentas!',
+        icon: 'send',
+        component: DetalleVentaList
+      },
+      {
+        path: '/catalogo/detalleVentas/new',
+        exact: true,
+        title: 'DetalleVenta New!',
+        icon: 'send',
+        component: DetalleVentaForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/detalleVentas/edit/:id',
+        exact: true,
+        title: 'DetalleVenta Edit!',
+        icon: 'send',
+        component: DetalleVentaForm,
+        novisible: true
+      },
+      
     ]
   }
 ]

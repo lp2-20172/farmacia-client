@@ -7,7 +7,7 @@ import TextField from 'material-ui/TextField';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 
-import { getList, del } from '../../actions/producto-action'
+import { getList, del } from '../../actions/detalleVenta-action'
 import { connect } from 'react-redux'
 
 import Button from 'material-ui/Button';
@@ -29,7 +29,7 @@ class List extends Component {
     }
 
     handleClick = () => {
-        this.props.history.push('/catalogo/productos/new');
+        this.props.history.push('/catalogo/detalleVentas/new');
     }
 
     render() {
@@ -78,13 +78,7 @@ class List extends Component {
                             <TableHead>
                                 <TableRow>
                                     <TableCell>#</TableCell>
-                                    <TableCell >codigo</TableCell>
-                                    <TableCell >Nombre</TableCell>
-                                    <TableCell >FechaVen</TableCell>
-                                    <TableCell >UnidadMed</TableCell>
-                                    <TableCell >PrecioVenta</TableCell>
-                                    <TableCell >Almacen</TableCell>
-                                    <TableCell >Categoria</TableCell>
+                                    <TableCell >cantidad</TableCell>
                                     <TableCell >Edit</TableCell>
                                     <TableCell >Delete</TableCell>
                                 </TableRow>
@@ -94,16 +88,10 @@ class List extends Component {
                                 {list.map((d, index) =>
                                     <TableRow key={index}>
                                         <TableCell numeric>{index + 1}</TableCell>
-                                        <TableCell >{d.codigo}</TableCell>
                                         <TableCell >{d.nombre}</TableCell>
-                                        <TableCell >{d.fechaVen}</TableCell>
-                                        <TableCell >{d.unidad_med}</TableCell>
-                                        <TableCell >{d.precio_venta}</TableCell>
-                                        <TableCell >{d.almacen}</TableCell>
-                                        <TableCell >{d.categoria}</TableCell>
                                         
                                         <TableCell >
-                                            <Link to={`/catalogo/productos/edit/${d.id}`} className="ui basic button green">Edit</Link>
+                                            <Link to={`/catalogo/detalleVentas/edit/${d.id}`} className="ui basic button green">Edit</Link>
                                         </TableCell>
                                         <TableCell >
                                             <Button onClick={() => del(d.id, this.props.history)} >Delete</Button>
@@ -125,7 +113,7 @@ List.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        list: state.producto.list
+        list: state.detalleVenta.list
     }
 }
 
