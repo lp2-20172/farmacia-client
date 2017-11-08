@@ -7,7 +7,7 @@ import TextField from 'material-ui/TextField';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 
-import { getList, del } from '../../actions/categoria-action'
+import { getList, del } from '../../actions/detalleCompra-action'
 import { connect } from 'react-redux'
 
 import Button from 'material-ui/Button';
@@ -29,7 +29,7 @@ class List extends Component {
     }
 
     handleClick = () => {
-        this.props.history.push('/catalogo/categorias/new');
+        this.props.history.push('/catalogo/detalleCompra/new');
     }
 
     render() {
@@ -47,16 +47,16 @@ class List extends Component {
                 <CardHeader
                     avatar={
                         <Avatar aria-label="Recipe" >
-                            C
+                            R
                           </Avatar>
                     }
-                    title="Lista de Categorias"
-                    subheader="Noviembre, 07 del 2017"
+                    title="Lista Detalle Compras"
+                    subheader="Noviembre, 08 del 2017"
                 />
 
                 <CardContent>
                     <Typography component="p">
-                        q={this.props.q}
+                        {this.props.q}
                     </Typography>
 
                     <TextField
@@ -78,7 +78,9 @@ class List extends Component {
                             <TableHead>
                                 <TableRow>
                                     <TableCell>#</TableCell>
-                                    <TableCell >Nombre Categoria</TableCell>
+                                    <TableCell >Nuemro de Documento</TableCell>
+                                    <TableCell >Cantidad</TableCell>
+                                    <TableCell >Precio Unitario</TableCell>
                                     <TableCell >Opciones</TableCell>
                                 </TableRow>
                             </TableHead>
@@ -87,11 +89,14 @@ class List extends Component {
                                 {list.map((d, index) =>
                                     <TableRow key={index}>
                                         <TableCell numeric>{index + 1}</TableCell>
-                                        <TableCell >{d.nombre}</TableCell>
+                                        <TableCell >{d.nro_doc}</TableCell>
+                                        <TableCell >{d.cantidad}</TableCell>
+                                        <TableCell >s/.{d.precio_unitario}</TableCell>
                                         
                                         <TableCell >
-                                            <Link to={`/catalogo/categorias/edit/${d.id}`} className="ui basic button green">Edit</Link>
-                                        
+                                            <Link to={`/catalogo/detalleCompra/edit/${d.id}`} className="ui basic button green">Edit</Link>
+                                            </TableCell>
+                                            <TableCell >
                                             <Button onClick={() => del(d.id, this.props.history)} >Delete</Button>
                                         </TableCell>
                                     </TableRow>
@@ -111,7 +116,7 @@ List.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        list: state.categoria.list
+        list: state.detalleCompra.list
     }
 }
 

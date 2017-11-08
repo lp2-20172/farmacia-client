@@ -5,7 +5,7 @@ import Avatar from 'material-ui/Avatar'
 //import Typography from 'material-ui/Typography'
 //import TextField from 'material-ui/TextField';
 
-import { save, getById, update } from '../../actions/detalleVenta-action'
+import { save, getById, update } from '../../actions/detalleCompra-action'
 import { connect } from 'react-redux'
 
 class Form extends Component {
@@ -45,6 +45,7 @@ class Form extends Component {
         if (id) {
             //this.props.getById(id)
             //this.props.getItemAsync(id)
+
             this.props.getById(id).then(data => {
                 console.log('componentWillReceiveProps data:' + JSON.stringify(data))
                 this.setState({
@@ -53,6 +54,7 @@ class Form extends Component {
                     nombre: data.nombre
                 })
             }).catch(e => {
+
             });
         }
         */
@@ -102,10 +104,10 @@ class Form extends Component {
                 <CardHeader
                     avatar={
                         <Avatar aria-label="Recipe" >
-                            R
+                            DC
                           </Avatar>
                     }
-                    title="User Form"
+                    title="Compra Detalle"
                     subheader="Users Form"
                 />
                 <CardContent>
@@ -114,9 +116,23 @@ class Form extends Component {
                         <br />
 
                         <label>
-                        cantidad:
-                            <input type="text" name="cantidad" value={this.state.cantidad} onChange={this.handleChange} />
+                            Nombre:
+                            <input type="numeric" name="nro_doc" value={this.state.nro_doc} onChange={this.handleChange} />
                         </label>
+
+                        <br />
+
+                        <label>
+                        cantidad:
+                            <input type="numeric" name="cantidad" value={this.state.cantidad} onChange={this.handleChange} />
+                        </label>
+
+                        <br />
+
+                        <label>
+                            Precio Unitario:
+                            <input type="numeric" name="precio_unitario" value={this.state.precio_unitario} onChange={this.handleChange} />
+                        </label> 
                         <input type="submit" value="Submit" />
                     </form>
                 </CardContent>
@@ -132,7 +148,7 @@ Form.propTypes = {
 const mapStateToProps = (state, props) => {
     if (props.match.params.id) {
         return {
-            data: state.detalleVenta.list.find(item => item.id + '' === props.match.params.id + '')
+            data: state.detalleCompra.list.find(item => item.id + '' === props.match.params.id + '')
         }
     }
     return {

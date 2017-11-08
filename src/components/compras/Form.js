@@ -111,25 +111,25 @@ class Form extends Component {
                         <br />
                         <label>
                             Precio Total:
-                            <input type="text" name="nro_doc" value={this.state.nro_doc} onChange={this.handleChange} />
+                            <input type="text" name="precio_total" value={this.state.precio_total} onChange={this.handleChange} />
                         </label>
                         <br />
                         <label>
-                            Proveedor:
-                            <input type="text" name="nro_doc" value={this.state.nro_doc} onChange={this.handleChange} />
+                            Proveedor:    Foranie Key
+                            <input type="text" name="proveedor" value={this.state.proveedor} onChange={this.handleChange} />
                         </label>
                         <br />
                         <label>
-                            Almacen:
-                            <input type="text" name="nro_doc" value={this.state.nro_doc} onChange={this.handleChange} />
+                            Almacen:  Foranie Key
+                            <input type="text" name="almacen" value={this.state.almacen} onChange={this.handleChange} />
                         </label>
                         <br />
                         <br>
                         
                         </br>
                         <label>
-                            Comprador:
-                            <input type="text" name="fecha" value={this.state.fecha} onChange={this.handleChange} />
+                            Comprador: Foranie Key
+                            <input type="text" name="comprador" value={this.state.comprador} onChange={this.handleChange} />
                         </label>
                         <input type="submit" value="Submit" />
                     </form>

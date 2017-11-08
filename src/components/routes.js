@@ -11,6 +11,8 @@ import VentaList  from './ventas/List'
 import VentaForm  from './ventas/Form'
 import DetalleVentaList  from './detalleVentas/List'
 import DetalleVentaForm  from './detalleVentas/Form'
+import DetalleCompraList  from './detalleCompras/List'
+import DetalleCompraForm  from './detalleCompras/Form'
 
 import Login from './Login'
 
@@ -182,6 +184,28 @@ const routes = [
         title: 'Editar Compra',
         icon: 'shopping_cart',
         component: CompraForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/detalleCompras/list',
+        exact: true,
+        title: 'Detalle Compras',
+        icon: 'dns',
+        component: DetalleCompraList
+      },
+      {
+        path: '/catalogo/detalleCompras/new',
+        exact: true,
+        title: 'Nueva Compras',
+        component: DetalleCompraForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/detalleCompras/edit/:id',
+        exact: true,
+        title: 'Editar Detalle Compra',
+        icon: 'dns',
+        component: DetalleCompraForm,
         novisible: true
       },
       
