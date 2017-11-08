@@ -38,14 +38,14 @@ const routes = [
 
   {
     path: '/sandwiches',
-    title: 'sandwiches!',
-    icon: 'send',
+    title: 'Usuarios',
+    icon: 'person_outline',
     component: Sandwiches
   },
   {
     path: '/tacos',
-    title: 'tacos!',
-    icon: 'list',
+    title: 'tacos',
+    icon: 'format_list_numbered',
     component: Content,
     routes: [
       {
@@ -60,7 +60,7 @@ const routes = [
       },
       {
         path: '/tacos/about/:id',
-        title: 'About!',
+        title: 'About',
         icon: 'send',
         component: About
       }
@@ -68,21 +68,21 @@ const routes = [
   },
   {
     path: '/catalogo',
-    title: 'Catalogo!',
-    icon: 'list',
+    title: 'Catalogo',
+    icon: 'format_list_numbered',
     component: Content,
     routes: [
       {
         path: '/catalogo/categorias/list',
         exact: true,
-        title: 'Categorias!',
+        title: 'Categorias',
         icon: 'send',
         component: CategoriaList
       },
       {
         path: '/catalogo/categorias/new',
         exact: true,
-        title: 'Categoria New!',
+        title: 'Categoria New',
         icon: 'send',
         component: CategoriaForm,
         novisible: true
@@ -90,7 +90,7 @@ const routes = [
       {
         path: '/catalogo/categorias/edit/:id',
         exact: true,
-        title: 'Categoria Edit!',
+        title: 'Categoria Edit',
         icon: 'send',
         component: CategoriaForm,
         novisible: true
@@ -98,14 +98,14 @@ const routes = [
       {
         path: '/catalogo/productos/list',
         exact: true,
-        title: 'Productos!',
+        title: 'Productos',
         icon: 'send',
         component: ProductoList
       },
       {
         path: '/catalogo/productos/new',
         exact: true,
-        title: 'Producto New!',
+        title: 'Producto New',
         icon: 'send',
         component: ProductoForm,
         novisible: true
@@ -113,7 +113,7 @@ const routes = [
       {
         path: '/catalogo/productos/edit/:id',
         exact: true,
-        title: 'Producto Edit!',
+        title: 'Producto Edit',
         icon: 'send',
         component: ProductoForm,
         novisible: true
@@ -121,46 +121,46 @@ const routes = [
       {
         path: '/catalogo/ventas/list',
         exact: true,
-        title: 'Ventas!',
-        icon: 'send',
+        title: 'Ventas',
+        icon: 'local_mall',
         component: VentaList
       },
       {
         path: '/catalogo/ventas/new',
         exact: true,
-        title: 'Venta New!',
-        icon: 'send',
+        title: 'Venta New',
+        icon: 'local_mall',
         component: VentaForm,
         novisible: true
       },
       {
         path: '/catalogo/ventas/edit/:id',
         exact: true,
-        title: 'Venta Edit!',
-        icon: 'send',
+        title: 'Venta Edit',
+        icon: 'local_mall',
         component: VentaForm,
         novisible: true
       },
       {
         path: '/catalogo/detalleVentas/list',
         exact: true,
-        title: 'DetalleVentas!',
-        icon: 'send',
+        title: 'DetalleVentas',
+        icon: 'insert_link',
         component: DetalleVentaList
       },
       {
         path: '/catalogo/detalleVentas/new',
         exact: true,
-        title: 'DetalleVenta New!',
-        icon: 'send',
+        title: 'DetalleVenta New',
+        icon: 'insert_link',
         component: DetalleVentaForm,
         novisible: true
       },
       {
         path: '/catalogo/detalleVentas/edit/:id',
         exact: true,
-        title: 'DetalleVenta Edit!',
-        icon: 'send',
+        title: 'DetalleVenta Edit',
+        icon: 'insert_link',
         component: DetalleVentaForm,
         novisible: true
       },
@@ -190,7 +190,7 @@ const routes = [
         path: '/catalogo/detalleCompras/list',
         exact: true,
         title: 'Detalle Compras',
-        icon: 'dns',
+        icon: 'insert_link',
         component: DetalleCompraList
       },
       {
@@ -204,7 +204,7 @@ const routes = [
         path: '/catalogo/detalleCompras/edit/:id',
         exact: true,
         title: 'Editar Detalle Compra',
-        icon: 'dns',
+        icon: 'insert_link',
         component: DetalleCompraForm,
         novisible: true
       },

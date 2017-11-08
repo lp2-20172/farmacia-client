@@ -107,8 +107,8 @@ class Form extends Component {
                             R
                           </Avatar>
                     }
-                    title="User Form"
-                    subheader="Users Form"
+                    title="Lista de Categorias"
+                    subheader="Niviembre 8, del 2017"
                 />
                 <CardContent>
                     <form onSubmit={this.handleSubmit}>

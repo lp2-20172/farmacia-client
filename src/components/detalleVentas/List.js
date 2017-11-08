@@ -50,8 +50,8 @@ class List extends Component {
                             R
                           </Avatar>
                     }
-                    title="User List"
-                    subheader="Users list"
+                    title="Lista Detalle Venta"
+                    subheader="Noviembre 8, del 2017"
                 />
 
                 <CardContent>

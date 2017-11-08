@@ -47,8 +47,8 @@ class List extends Component {
                 <CardHeader
                 avatar={<Avatar aria-label="Recipe" >C</Avatar>}
                 title="Lista de Compras"
-                subhead="Noviembre 7, 2017"
-                subheader="Noviembre 7, 2017"
+                subhead="Noviembre 8, 2017"
+                subheader="Noviembre 8, 2017"
               />
 
                 <CardContent>

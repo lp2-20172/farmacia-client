@@ -51,7 +51,7 @@ class List extends Component {
                           </Avatar>
                     }
                     title="Lista de Categorias"
-                    subheader="Noviembre, 07 del 2017"
+                    subheader="Noviembre 8,  del 2017"
                 />
 
                 <CardContent>

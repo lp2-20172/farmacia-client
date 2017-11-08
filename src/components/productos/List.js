@@ -47,11 +47,11 @@ class List extends Component {
                 <CardHeader
                     avatar={
                         <Avatar aria-label="Recipe" >
-                            R
+                            P
                           </Avatar>
                     }
-                    title="User List"
-                    subheader="Users list"
+                    title="Lista de Productos"
+                    subheader="Novieembre 8, del 2017"
                 />
 
                 <CardContent>
@@ -98,7 +98,7 @@ class List extends Component {
                                         <TableCell >{d.nombre}</TableCell>
                                         <TableCell >{d.fechaVen}</TableCell>
                                         <TableCell >{d.unidad_med}</TableCell>
-                                        <TableCell >{d.precio_venta}</TableCell>
+                                        <TableCell >s/.{d.precio_venta}</TableCell>
                                         <TableCell >{d.almacen}</TableCell>
                                         <TableCell >{d.categoria}</TableCell>
                                         
