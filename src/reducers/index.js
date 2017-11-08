@@ -11,7 +11,11 @@ import compra from './compra-reducer'
 import venta from './venta-reducer'
 import detalleVenta from './detalleVenta-reducer'
 import detalleCompra from './detalleCompra-reducer'
+<<<<<<< HEAD
 import proveedor from './proveedor-reducer'
+=======
+import almacen from './almacen-reducer'
+>>>>>>> f15f315f187a6b65f9c77c5a258c4b1014311e25
 =======
 >>>>>>> fa1798084bb135499dfd9f51cfa0c79363f6fb15
 //import ecomm from './ecommReducer'
@@ -28,7 +32,11 @@ var reducers = combineReducers({
   venta: venta,
   detalleVenta: detalleVenta,
   detalleCompra: detalleCompra,
+<<<<<<< HEAD
   proveedor: proveedor,
+=======
+  almacen: almacen,
+>>>>>>> f15f315f187a6b65f9c77c5a258c4b1014311e25
 =======
   person: person,
   users: users,
