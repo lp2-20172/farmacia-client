@@ -13,6 +13,8 @@ import DetalleVentaList  from './detalleVentas/List'
 import DetalleVentaForm  from './detalleVentas/Form'
 import DetalleCompraList  from './detalleCompras/List'
 import DetalleCompraForm  from './detalleCompras/Form'
+import AlmacenList  from './almacenes/List'
+import AlmacenForm  from './almacenes/Form'
 
 import Login from './Login'
 
@@ -208,7 +210,28 @@ const routes = [
         component: DetalleCompraForm,
         novisible: true
       },
-      
+      {
+        path: '/catalogo/almacenes/list',
+        exact: true,
+        title: 'Almacenes',
+        icon: 'dns',
+        component: AlmacenList
+      },
+      {
+        path: '/catalogo/almacenes/new',
+        exact: true,
+        title: 'Almacen',
+        component: AlmacenForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/almacen/edit/:id',
+        exact: true,
+        title: 'Editar almacen',
+        icon: 'dns',
+        component: AlmacenForm,
+        novisible: true
+      },
     ]
   }
 ]
