@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Card, { CardHeader, CardContent } from 'material-ui/Card'
+import Card, { CardHeader, CardContent} from 'material-ui/Card'
 import Avatar from 'material-ui/Avatar'
 //import Typography from 'material-ui/Typography'
 //import TextField from 'material-ui/TextField';
@@ -98,9 +98,9 @@ class Form extends Component {
             <Card>
                 <CardHeader
                 avatar={<Avatar aria-label="Recipe" >R</Avatar>}
-                title="Shrimp and Chorizo Paella"
-                subhead="September 14, 2016"
-                subheader="September 14, 2016"
+                title="Agergar una Compra"
+                subhead="Noviembre 8, 2017"
+                subheader="Noviembre 8, 2017"
               />
                 <CardContent>
                     <form onSubmit={this.handleSubmit}>
@@ -124,7 +124,9 @@ class Form extends Component {
                             <input type="text" name="nro_doc" value={this.state.nro_doc} onChange={this.handleChange} />
                         </label>
                         <br />
-                        <br></br>
+                        <br>
+                        
+                        </br>
                         <label>
                             Comprador:
                             <input type="text" name="fecha" value={this.state.fecha} onChange={this.handleChange} />
