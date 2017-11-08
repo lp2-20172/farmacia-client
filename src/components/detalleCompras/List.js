@@ -29,7 +29,7 @@ class List extends Component {
     }
 
     handleClick = () => {
-        this.props.history.push('/catalogo/detalleCompra/new');
+        this.props.history.push('/catalogo/detalleCompras/new');
     }
 
     render() {
@@ -94,7 +94,7 @@ class List extends Component {
                                         <TableCell >s/.{d.precio_unitario}</TableCell>
                                         
                                         <TableCell >
-                                            <Link to={`/catalogo/detalleCompra/edit/${d.id}`} className="ui basic button green">Edit</Link>
+                                            <Link to={`/catalogo/detalleCompras/edit/${d.id}`} className="ui basic button green">Edit</Link>
                                             </TableCell>
                                             <TableCell >
                                             <Button onClick={() => del(d.id, this.props.history)} >Delete</Button>

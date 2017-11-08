@@ -114,15 +114,12 @@ class Form extends Component {
                             <input type="text" name="precio_total" value={this.state.precio_total} onChange={this.handleChange} />
                         </label>
                         <br />
-                        <label>
-                            Proveedor:    Foranie Key
-                            <input type="text" name="proveedor" value={this.state.proveedor} onChange={this.handleChange} />
-                        </label>
-                        <br />
-                        <label>
-                            Almacen:  Foranie Key
-                            <input type="text" name="almacen" value={this.state.almacen} onChange={this.handleChange} />
-                        </label>
+                        <select>
+                        <option value="grapefruit">Grapefruit</option>
+                        <option value="lime">Lime</option>
+                        <option selected value="coconut">Coconut</option>
+                        <option value="mango">Mango</option>
+                      </select>                        <br />
                         <br />
                         <br>
                         
