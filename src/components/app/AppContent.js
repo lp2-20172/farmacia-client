@@ -1,11 +1,11 @@
-import React from 'react'
-import {
+ import React from 'react'
+ import {
   Link
-} from 'react-router-dom'
+ } from 'react-router-dom'
 
-import { RouteWithSubRoutes } from '../utils/Routes'
+ import { RouteWithSubRoutes } from '../utils/Routes'
 
-const Content = ({ routes }) => (
+ const Content = ({ routes }) => (
   <div>
     
     {routes.map((route, i) => (
@@ -18,13 +18,15 @@ const Content = ({ routes }) => (
 
 
 
-class Home extends React.Component {
+class Farmacenter extends React.Component {
   render() {
     return (
       <div>
-        <h2>Home</h2>d
-
+        <h2>Farmacenter</h2>
+        <h3>los mejores precios lo encuentras aqui  </h3>
             </div>
+      
+
     );
   }
 }
@@ -36,15 +38,15 @@ class Home extends React.Component {
 ////////////////////////////////////////////////////////////
 // first our route components
 
-const Sandwiches = () => <h2>Sandwiches</h2>
+const Farmacia = () => <h2>Farmacia</h2>
 
-const Tacos = ({ routes }) => (
+const Core = ({ routes }) => (
   <div>
-    <h2>Tacos</h2>
+    <h2>Core</h2>
     <ul>
-      <li><Link to="/tacos/bus">Bus</Link></li>
-      <li><Link to="/tacos/cart">Cart</Link></li>
-      <li><Link to="/tacos/about/8">about</Link></li>
+      <li><Link to="/Core/users">Users</Link></li>
+      
+      <li><Link to="/Core/person">Person</Link></li>
 
 
     </ul>
@@ -55,15 +57,15 @@ const Tacos = ({ routes }) => (
   </div>
 )
 
-const Bus = () => <h3>Bus</h3>
-const Cart = () => <h3>Cart</h3>
+const Users = () => <h3>Users</h3>
 
-class About extends React.Component {
+
+class Person extends React.Component {
   render() {
     //console.log("json"+JSON.stringify(this.props))
     return (
       <div>
-        <h2>About</h2>
+        <h2>Person</h2>
         id= {this.props.match.params.id}
 
       </div>
@@ -73,7 +75,7 @@ class About extends React.Component {
 
 
 
-export {Content, Home, Tacos, Bus, Cart, About, Sandwiches}
+export {Content, Farmacenter, Core, Users, Person, Farmacia}
 
 
 /*

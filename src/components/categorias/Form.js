@@ -24,7 +24,7 @@ class Form extends Component {
         super(props);
         this.state = {
             id: props.data ? props.data.id : null,
-            
+            codigo: props.data ? props.data.codigo : '',
             nombre: props.data ? props.data.nombre : ''
         }
     }
@@ -67,7 +67,7 @@ class Form extends Component {
             this.props.getById(id).then(data => {
                 this.setState({
                     id: data.id,
-                    
+                    codigo: data.codigo,
                     nombre: data.nombre
                 });
             });
@@ -107,16 +107,19 @@ class Form extends Component {
                             R
                           </Avatar>
                     }
-                    title="Lista de Categorias"
-                    subheader="Niviembre 8, del 2017"
+                    title="User Form"
+                    subheader="Users Form"
                 />
                 <CardContent>
                     <form onSubmit={this.handleSubmit}>
-                       
+                        <label>
+                            Codigo:
+                            <input type="text" name="codigo" value={this.state.codigo} onChange={this.handleChange} />
+                        </label>
                         <br />
 
                         <label>
-                            Nombre:
+                            Name:
                             <input type="text" name="nombre" value={this.state.nombre} onChange={this.handleChange} />
                         </label>
                         <input type="submit" value="Submit" />

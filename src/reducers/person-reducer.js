@@ -1,47 +1,47 @@
-import { VENTA_LIST_REQUEST, VENTA_LIST_SUCCESS, VENTA_LIST_FAILURE } from '../actions/venta-action'
-import { VENTA_ADD, VENTA_FETCH, VENTA_UPDATE, VENTA_DELETE } from '../actions/venta-action'
+import { PERSON_LIST_REQUEST, PERSON_LIST_SUCCESS, PERSON_LIST_FAILURE } from '../actions/person-action'
+import { PERSON_ADD, PERSON_FETCH, PERSON_UPDATE, PERSON_DELETE } from '../actions/person-action'
 
 const initialState = {
     list: [],
     data: {}
 }
 
-const ventaReducer = (state = initialState, action) => {
+const personReducer = (state = initialState, action) => {
     switch (action.type) {
 
-        case VENTA_LIST_REQUEST: return {
+        case PERSON_LIST_REQUEST: return {
             ...state,
             list: [],
             error: null
         }
-        case VENTA_LIST_SUCCESS: return {
+        case PERSON_LIST_SUCCESS: return {
             ...state,
             list: action.list,
             error: null
         }
-        case VENTA_LIST_FAILURE: return {
+        case PERSON_LIST_FAILURE: return {
             ...state,
             list: [],
             error: action.error,
         }
 
 
-        case VENTA_ADD: return {
+        case PERSON_ADD: return {
             ...state,
             //data: {} // no usado aun
         }
-        case VENTA_UPDATE: return {
+        case PERSON_UPDATE: return {
             ...state,
             //data: {} // no usado aun
         }
-        case VENTA_FETCH: {
+        case PERSON_FETCH: {
             //console.log('categoriaReducer data:' + JSON.stringify(action.data))
             return {
                 ...state,
                 data: action.data
             }
         }
-        case VENTA_DELETE: {
+        case PERSON_DELETE: {
             const id = action.data
             return {
                 ...state,
@@ -58,4 +58,4 @@ const ventaReducer = (state = initialState, action) => {
 
 }
 
-export default ventaReducer
+export default personReducer

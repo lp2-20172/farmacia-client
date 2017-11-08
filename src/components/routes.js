@@ -1,19 +1,14 @@
 import { Content } from './app/AppContent'
-import { Home, Bus, Cart, About, Sandwiches }
+import { Farmacenter, Farmacia }
   from './app/AppContent'
 import CategoriaList from './categorias/List'
+import UsersList from './users/List'
+import UsersForm from './users/Form'
+import PersonList from './person/List'
+import PersonForm from './person/Form'
 import CategoriaForm from './categorias/Form'
-import ProductoList  from './productos/List'
-import ProductoForm  from './productos/Form'
-import CompraList from './compras/List'
-import CompraForm from './compras/Form'
-import VentaList  from './ventas/List'
-import VentaForm  from './ventas/Form'
-import DetalleVentaList  from './detalleVentas/List'
-import DetalleVentaForm  from './detalleVentas/Form'
-import DetalleCompraList  from './detalleCompras/List'
-import DetalleCompraForm  from './detalleCompras/Form'
-
+import ProductoList from './productos/List'
+import ProductoForm from './productos/Form'
 import Login from './Login'
 
 const routese = [
@@ -28,61 +23,94 @@ const routese = [
 // then our route config
 const routes = [
   {
-    path: '/home',
-    title: 'Home!',
-    icon: 'home',
+    path: '/Farmacenter',
+    title: 'Farmacenter',
+    icon: 'Farmacenter',
     exact: true,
-    component: Home
+    component: Farmacenter
   },
 
 
   {
-    path: '/sandwiches',
-    title: 'Usuarios',
-    icon: 'person_outline',
-    component: Sandwiches
+    path: '/farmacia',
+    title: 'farmacia',
+    icon: 'send',
+    component: Farmacia
   },
   {
-    path: '/tacos',
-    title: 'tacos',
-    icon: 'format_list_numbered',
+    path: '/core/',
+    title: 'core',
+    icon: 'list',
     component: Content,
     routes: [
       {
-        path: '/tacos/bus',
-        title: 'bus!',
+        path: '/core/users/list',
+        exact: true,
+        title: 'users',
         icon: 'send',
-        component: Bus
+        component: UsersList
+
+
       },
       {
-        path: '/tacos/cart',
-        component: Cart
+        path: '/core/users/new',
+        exact: true,
+        title: 'Users New!',
+        icon: 'send',
+        component: UsersForm,
+        novisible: true
       },
       {
-        path: '/tacos/about/:id',
-        title: 'About',
+        path: '/core/users/edit/:id',
+        exact: true,
+        title: 'Users Edit!',
         icon: 'send',
-        component: About
+        component: UsersForm,
+        novisible: true
+      },
+      
+      {
+        path: '/core/person/list',
+        exact: true,
+        title: 'person',
+        icon: 'send',
+        component: PersonList
+      },
+      {
+        path: '/core/person/new',
+        exact: true,
+        title: 'Person New!',
+        icon: 'send',
+        component: PersonForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/categorias/edit/:id',
+        exact: true,
+        title: 'Categoria Edit!',
+        icon: 'send',
+        component: CategoriaForm,
+        novisible: true
       }
     ]
   },
   {
     path: '/catalogo',
-    title: 'Catalogo',
-    icon: 'format_list_numbered',
+    title: 'Catalogo!',
+    icon: 'list',
     component: Content,
     routes: [
       {
         path: '/catalogo/categorias/list',
         exact: true,
-        title: 'Categorias',
+        title: 'Categorias!',
         icon: 'send',
         component: CategoriaList
       },
       {
         path: '/catalogo/categorias/new',
         exact: true,
-        title: 'Categoria New',
+        title: 'Categoria New!',
         icon: 'send',
         component: CategoriaForm,
         novisible: true
@@ -90,7 +118,7 @@ const routes = [
       {
         path: '/catalogo/categorias/edit/:id',
         exact: true,
-        title: 'Categoria Edit',
+        title: 'Categoria Edit!',
         icon: 'send',
         component: CategoriaForm,
         novisible: true
@@ -98,14 +126,14 @@ const routes = [
       {
         path: '/catalogo/productos/list',
         exact: true,
-        title: 'Productos',
+        title: 'Productos!',
         icon: 'send',
         component: ProductoList
       },
       {
         path: '/catalogo/productos/new',
         exact: true,
-        title: 'Producto New',
+        title: 'Producto New!',
         icon: 'send',
         component: ProductoForm,
         novisible: true
@@ -113,102 +141,11 @@ const routes = [
       {
         path: '/catalogo/productos/edit/:id',
         exact: true,
-        title: 'Producto Edit',
+        title: 'Producto Edit!',
         icon: 'send',
         component: ProductoForm,
         novisible: true
       },
-      {
-        path: '/catalogo/ventas/list',
-        exact: true,
-        title: 'Ventas',
-        icon: 'local_mall',
-        component: VentaList
-      },
-      {
-        path: '/catalogo/ventas/new',
-        exact: true,
-        title: 'Venta New',
-        icon: 'local_mall',
-        component: VentaForm,
-        novisible: true
-      },
-      {
-        path: '/catalogo/ventas/edit/:id',
-        exact: true,
-        title: 'Venta Edit',
-        icon: 'local_mall',
-        component: VentaForm,
-        novisible: true
-      },
-      {
-        path: '/catalogo/detalleVentas/list',
-        exact: true,
-        title: 'DetalleVentas',
-        icon: 'insert_link',
-        component: DetalleVentaList
-      },
-      {
-        path: '/catalogo/detalleVentas/new',
-        exact: true,
-        title: 'DetalleVenta New',
-        icon: 'insert_link',
-        component: DetalleVentaForm,
-        novisible: true
-      },
-      {
-        path: '/catalogo/detalleVentas/edit/:id',
-        exact: true,
-        title: 'DetalleVenta Edit',
-        icon: 'insert_link',
-        component: DetalleVentaForm,
-        novisible: true
-      },
-      {
-        path: '/catalogo/compras/list',
-        exact: true,
-        title: 'Compras',
-        icon: 'shopping_cart',
-        component: CompraList
-      },
-      {
-        path: '/catalogo/compras/new',
-        exact: true,
-        title: 'Nueva Compras',
-        component: CompraForm,
-        novisible: true
-      },
-      {
-        path: '/catalogo/compras/edit/:id',
-        exact: true,
-        title: 'Editar Compra',
-        icon: 'shopping_cart',
-        component: CompraForm,
-        novisible: true
-      },
-      {
-        path: '/catalogo/detalleCompras/list',
-        exact: true,
-        title: 'Detalle Compras',
-        icon: 'insert_link',
-        component: DetalleCompraList
-      },
-      {
-        path: '/catalogo/detalleCompras/new',
-        exact: true,
-        title: 'Nueva Compras',
-        component: DetalleCompraForm,
-        novisible: true
-      },
-      {
-        path: '/catalogo/detalleCompras/edit/:id',
-        exact: true,
-        title: 'Editar Detalle Compra',
-        icon: 'insert_link',
-        component: DetalleCompraForm,
-        novisible: true
-      },
-      
     ]
   }
 ]

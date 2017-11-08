@@ -3,11 +3,9 @@ import { authReducer as auth } from '../components/utils/OAuth2'
 
 //import counterReducer from './counterReducer'
 import categoria from './categoria-reducer'
+import person from './person-reducer'
+import users from './users-reducer'
 import producto from './producto-reducer'
-import compra from './compra-reducer'
-import venta from './venta-reducer'
-import detalleVenta from './detalleVenta-reducer'
-import detalleCompra from './detalleCompra-reducer'
 //import ecomm from './ecommReducer'
 import themeReducer from './appLayoutReducer'
 
@@ -17,10 +15,8 @@ var reducers = combineReducers({
    // counter: counterReducer,
   categoria: categoria,
   producto: producto,
-  compra: compra,
-  venta: venta,
-  detalleVenta: detalleVenta,
-  detalleCompra: detalleCompra,
+  person: person,
+  users: users,
   //  ecomm: ecomm,
   theme:themeReducer,
 

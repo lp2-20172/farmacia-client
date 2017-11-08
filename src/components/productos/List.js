@@ -47,11 +47,11 @@ class List extends Component {
                 <CardHeader
                     avatar={
                         <Avatar aria-label="Recipe" >
-                            P
+                            R
                           </Avatar>
                     }
-                    title="Lista de Productos"
-                    subheader="Novieembre 8, del 2017"
+                    title="User List"
+                    subheader="Users list"
                 />
 
                 <CardContent>
@@ -78,13 +78,7 @@ class List extends Component {
                             <TableHead>
                                 <TableRow>
                                     <TableCell>#</TableCell>
-                                    <TableCell >codigo</TableCell>
                                     <TableCell >Nombre</TableCell>
-                                    <TableCell >FechaVen</TableCell>
-                                    <TableCell >UnidadMed</TableCell>
-                                    <TableCell >PrecioVenta</TableCell>
-                                    <TableCell >Almacen</TableCell>
-                                    <TableCell >Categoria</TableCell>
                                     <TableCell >Edit</TableCell>
                                     <TableCell >Delete</TableCell>
                                 </TableRow>
@@ -94,13 +88,7 @@ class List extends Component {
                                 {list.map((d, index) =>
                                     <TableRow key={index}>
                                         <TableCell numeric>{index + 1}</TableCell>
-                                        <TableCell >{d.codigo}</TableCell>
                                         <TableCell >{d.nombre}</TableCell>
-                                        <TableCell >{d.fechaVen}</TableCell>
-                                        <TableCell >{d.unidad_med}</TableCell>
-                                        <TableCell >s/.{d.precio_venta}</TableCell>
-                                        <TableCell >{d.almacen}</TableCell>
-                                        <TableCell >{d.categoria}</TableCell>
                                         
                                         <TableCell >
                                             <Link to={`/catalogo/productos/edit/${d.id}`} className="ui basic button green">Edit</Link>

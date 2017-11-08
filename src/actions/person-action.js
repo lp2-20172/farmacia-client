@@ -1,54 +1,54 @@
-//import axios from "axios";
+import axios from "axios";
 
 import client from './'
 
 //https://github.com/brandiqa/redux-crud-example/blob/master/src/actions/contact-actions.js#L22
 
-const url = '/api-catalogo/ventas/'
+const url = '/api-core/person/'
 
-export const VENTA_LIST_REQUEST = "VENTA_LIST_REQUEST"
-export const VENTA_LIST_SUCCESS = 'VENTA_LIST_SUCCESS'
-export const VENTA_LIST_FAILURE = 'VENTA_LIST_FAILURE'
+export const PERSON_LIST_REQUEST = "PERSON_LIST_REQUEST"
+export const PERSON_LIST_SUCCESS = 'PERSON_LIST_SUCCESS'
+export const PERSON_LIST_FAILURE = 'PERSON_LIST_FAILURE'
 
-export const ventaList = () => ({
-    type: VENTA_LIST_REQUEST,
+export const personList = () => ({
+    type: PERSON_LIST_REQUEST,
 })
 
-export const ventaListSuccess = (list) => ({
-    type: VENTA_LIST_SUCCESS,
+export const personListSuccess = (list) => ({
+    type: PERSON_LIST_SUCCESS,
     list
 })
 
-export const ventaListFailure = error => ({
-    type: VENTA_LIST_FAILURE,
+export const personListFailure = error => ({
+    type: PERSON_LIST_FAILURE,
     error
 })
 
-export const VENTA_ADD = "VENTA_ADD"
-export const VENTA_FETCH = "VENTA_FETCH"
-export const VENTA_UPDATE = "VENTA_UPDATE"
-export const VENTA_DELETE = "VENTA_DELETE"
+export const PERSON_ADD = "PERSON_ADD"
+export const PERSON_FETCH = "PERSON_FETCH"
+export const PERSON_UPDATE = "PERSON_UPDATE"
+export const PERSON_DELETE = "PERSON_DELETE"
 
-export const getList = (q = '') => {
+export const getList = (name = '') => {
     let params = {
         params: {
-            query: q
+            query: name
         }
     }
     return (dispatch) => {
         client.get(url, params).then(r => {
-            dispatch(ventaListSuccess(r.data))
+            dispatch(personListSuccess(r.data))
         }).catch(error => { //throw (error)
             //console.log('getList catch:' + JSON.stringify(error.response))
             if (error.response) {
-                dispatch(ventaListFailure(error.response.data.detail))
+                dispatch(personListFailure(error.response.data.detail))
             } else if (error.request) {
                 console.log(error.request);
-                dispatch(ventaListFailure(JSON.stringify('Error '+error.request)))
+                dispatch(personListFailure(JSON.stringify('Error '+error.request)))
             } else {
                 // Something happened in setting up the request that triggered an Error
                 console.log('Error', error.message);
-                dispatch(ventaListFailure('Error '+error.message))
+                dispatch(personListFailure('Error '+error.message))
             }
             //console.log(error.config);
         })
@@ -61,10 +61,10 @@ export function save(data, history) {
         return client.post(url, data)
             .then((r) => {
                 dispatch({
-                    "type": VENTA_ADD,
+                    "type": PERSON_ADD,
                     "data": r.data //no usado
                 })
-                history.push('/catalogo/ventas/list')
+                history.push('/core/person/list')
             })
             .catch((error) => {
                 console.log(error)
@@ -79,7 +79,7 @@ export function getById(id) {
             .then((r) => {
                 /*
                 dispatch({
-                    "type": PRODUCTO_FETCH,
+                    "type": PERSON_FETCH,
                     "data": r.data 
                 })
                 */
@@ -97,10 +97,10 @@ export function update(data, history) {
         return client.put(`${url}${data.id}/`, data)
             .then((r) => {
                 dispatch({
-                    "type": VENTA_UPDATE,
+                    "type": PERSON_UPDATE,
                     "data": r.data //no usado
                 })
-                history.push('/catalogo/ventas/list')
+                history.push('/core/person/list')
             })
             .catch((error) => {
                 console.log(error)
@@ -115,10 +115,10 @@ export function del(_id, history) {
             .then((r) => {
                 //console.log('deletex r:' + JSON.stringify(r))
                 dispatch({
-                    "type": VENTA_DELETE,
+                    "type": PERSON_DELETE,
                     "data": _id
                 })
-                //history.push('/catalogo/producto')
+                //history.push('/core/categorias')
             })
             .catch((error) => {
                 console.log(error)
