@@ -4,7 +4,7 @@ import client from './'
 
 //https://github.com/brandiqa/redux-crud-example/blob/master/src/actions/contact-actions.js#L22
 
-const url = '/api-catalogo/detalleVentas/'
+const url = '/api-catalogo/detalleVenta/'
 
 export const DETALLEVENTA_LIST_REQUEST = "DETALLEVENTA_LIST_REQUEST"
 export const DETALLEVENTA_LIST_SUCCESS = 'DETALLEVENTA_LIST_SUCCESS'
@@ -79,7 +79,7 @@ export function getById(id) {
             .then((r) => {
                 /*
                 dispatch({
-                    "type": PRODUCTO_FETCH,
+                    "type": DETALLECOMPRA_FETCH,
                     "data": r.data 
                 })
                 */
@@ -118,7 +118,7 @@ export function del(_id, history) {
                     "type": DETALLEVENTA_DELETE,
                     "data": _id
                 })
-                //history.push('/catalogo/producto')
+                //history.push('/catalogo/detalleVentas')
             })
             .catch((error) => {
                 console.log(error)

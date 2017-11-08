@@ -50,8 +50,8 @@ class List extends Component {
                             R
                           </Avatar>
                     }
-                    title="Lista Detalle Venta"
-                    subheader="Noviembre 8, del 2017"
+                    title="User List"
+                    subheader="Users list"
                 />
 
                 <CardContent>
@@ -88,7 +88,7 @@ class List extends Component {
                                 {list.map((d, index) =>
                                     <TableRow key={index}>
                                         <TableCell numeric>{index + 1}</TableCell>
-                                        <TableCell >{d.nombre}</TableCell>
+                                        <TableCell >{d.cantidad}</TableCell>
                                         
                                         <TableCell >
                                             <Link to={`/catalogo/detalleVentas/edit/${d.id}`} className="ui basic button green">Edit</Link>

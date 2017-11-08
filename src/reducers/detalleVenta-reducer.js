@@ -1,47 +1,47 @@
-import { PRODUCTO_LIST_REQUEST, PRODUCTO_LIST_SUCCESS, PRODUCTO_LIST_FAILURE } from '../actions/producto-action'
-import { PRODUCTO_ADD, PRODUCTO_FETCH, PRODUCTO_UPDATE, PRODUCTO_DELETE } from '../actions/producto-action'
+import { DETALLEVENTA_LIST_REQUEST, DETALLEVENTA_LIST_SUCCESS, DETALLEVENTA_LIST_FAILURE } from '../actions/detalleVenta-action'
+import { DETALLEVENTA_ADD, DETALLEVENTA_FETCH, DETALLEVENTA_UPDATE, DETALLEVENTA_DELETE } from '../actions/detalleVenta-action'
 
 const initialState = {
     list: [],
     data: {}
 }
 
-const productoReducer = (state = initialState, action) => {
+const detalleVentaReducer = (state = initialState, action) => {
     switch (action.type) {
 
-        case PRODUCTO_LIST_REQUEST: return {
+        case DETALLEVENTA_LIST_REQUEST: return {
             ...state,
             list: [],
             error: null
         }
-        case PRODUCTO_LIST_SUCCESS: return {
+        case DETALLEVENTA_LIST_SUCCESS: return {
             ...state,
             list: action.list,
             error: null
         }
-        case PRODUCTO_LIST_FAILURE: return {
+        case DETALLEVENTA_LIST_FAILURE: return {
             ...state,
             list: [],
             error: action.error,
         }
 
 
-        case PRODUCTO_ADD: return {
+        case DETALLEVENTA_ADD: return {
             ...state,
             //data: {} // no usado aun
         }
-        case PRODUCTO_UPDATE: return {
+        case DETALLEVENTA_UPDATE: return {
             ...state,
             //data: {} // no usado aun
         }
-        case PRODUCTO_FETCH: {
+        case DETALLEVENTA_FETCH: {
             //console.log('categoriaReducer data:' + JSON.stringify(action.data))
             return {
                 ...state,
                 data: action.data
             }
         }
-        case PRODUCTO_DELETE: {
+        case DETALLEVENTA_DELETE: {
             const id = action.data
             return {
                 ...state,
@@ -58,4 +58,4 @@ const productoReducer = (state = initialState, action) => {
 
 }
 
-export default productoReducer
+export default detalleVentaReducer
