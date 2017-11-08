@@ -7,7 +7,7 @@ import TextField from 'material-ui/TextField';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 
-import { getList, del } from '../../actions/venta-action'
+import { getList, del } from '../../actions/person-action'
 import { connect } from 'react-redux'
 
 import Button from 'material-ui/Button';
@@ -29,7 +29,7 @@ class List extends Component {
     }
 
     handleClick = () => {
-        this.props.history.push('/catalogo/ventas/new');
+        this.props.history.push('/core/person/new');
     }
 
     render() {
@@ -39,7 +39,7 @@ class List extends Component {
         } else{
             list =[]
 
-        }
+    }
 
         return (
 
@@ -47,11 +47,11 @@ class List extends Component {
                 <CardHeader
                     avatar={
                         <Avatar aria-label="Recipe" >
-                            R
+                            F
                           </Avatar>
                     }
-                    title="User List"
-                    subheader="Users list"
+                    title="Person List"
+                    subheader="Person list"
                 />
 
                 <CardContent>
@@ -78,10 +78,7 @@ class List extends Component {
                             <TableHead>
                                 <TableRow>
                                     <TableCell>#</TableCell>
-                                    <TableCell >nro_doc</TableCell>
-                                    <TableCell >fecha</TableCell>
-                                    <TableCell >total</TableCell>
-                                    <TableCell >vendedor</TableCell>
+                                    <TableCell >Nombre</TableCell>
                                     <TableCell >Edit</TableCell>
                                     <TableCell >Delete</TableCell>
                                 </TableRow>
@@ -91,12 +88,10 @@ class List extends Component {
                                 {list.map((d, index) =>
                                     <TableRow key={index}>
                                         <TableCell numeric>{index + 1}</TableCell>
-                                        <TableCell >{d.nro_doc}</TableCell>
-                                        <TableCell >{d.fecha}</TableCell>
-                                        <TableCell >{d.total}</TableCell>
-                                        <TableCell >{d.vendedor}</TableCell>
+                                        <TableCell >{d.nombre}</TableCell>
+                                        
                                         <TableCell >
-                                            <Link to={`/catalogo/ventas/edit/${d.id}`} className="ui basic button green">Edit</Link>
+                                            <Link to={`/core/person/edit/${d.id}`} className="ui basic button green">Edit</Link>
                                         </TableCell>
                                         <TableCell >
                                             <Button onClick={() => del(d.id, this.props.history)} >Delete</Button>
@@ -118,7 +113,7 @@ List.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        list: state.venta.list
+        list: state.person.list
     }
 }
 

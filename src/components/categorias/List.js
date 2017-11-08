@@ -47,11 +47,11 @@ class List extends Component {
                 <CardHeader
                     avatar={
                         <Avatar aria-label="Recipe" >
-                            C
+                            R
                           </Avatar>
                     }
-                    title="Lista de Categorias"
-                    subheader="Noviembre 8,  del 2017"
+                    title="User List"
+                    subheader="Users list"
                 />
 
                 <CardContent>
@@ -61,7 +61,7 @@ class List extends Component {
 
                     <TextField
                         id="search"
-                        label="Buscar"
+                        label="Search"
                         value={this.props.q}
                         onChange={this.change}
                         margin="normal"
@@ -78,8 +78,9 @@ class List extends Component {
                             <TableHead>
                                 <TableRow>
                                     <TableCell>#</TableCell>
-                                    <TableCell >Nombre Categoria</TableCell>
-                                    <TableCell >Opciones</TableCell>
+                                    <TableCell >Nombre</TableCell>
+                                    <TableCell >Edit</TableCell>
+                                    <TableCell >Delete</TableCell>
                                 </TableRow>
                             </TableHead>
 
@@ -91,7 +92,8 @@ class List extends Component {
                                         
                                         <TableCell >
                                             <Link to={`/catalogo/categorias/edit/${d.id}`} className="ui basic button green">Edit</Link>
-                                        
+                                        </TableCell>
+                                        <TableCell >
                                             <Button onClick={() => del(d.id, this.props.history)} >Delete</Button>
                                         </TableCell>
                                     </TableRow>

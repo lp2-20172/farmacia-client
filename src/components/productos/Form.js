@@ -25,9 +25,7 @@ class Form extends Component {
         this.state = {
             id: props.data ? props.data.id : null,
             codigo: props.data ? props.data.codigo : '',
-            nombre: props.data ? props.data.nombre : '',
-            unidadMed: props.data ? props.data.unidadMed : '',
-            almacen: props.data ? props.data.almacen : ''
+            nombre: props.data ? props.data.nombre : ''
         }
     }
     /*
@@ -70,10 +68,7 @@ class Form extends Component {
                 this.setState({
                     id: data.id,
                     codigo: data.codigo,
-                    nombre: data.nombre,
-                    precioVenta : data.precioVenta,
-                    unidadMed: data.unidadMed,
-                    almacen: data.almacen
+                    nombre: data.nombre
                 });
             });
         }
@@ -126,29 +121,6 @@ class Form extends Component {
                         <label>
                             Name:
                             <input type="text" name="nombre" value={this.state.nombre} onChange={this.handleChange} />
-                        </label>
-                        <label>
-                            FechaVen:
-                            <input type="text" name="fechaVen" value={this.state.fechaVen} onChange={this.handleChange} />
-                        </label>
-                        <label>
-                            UnidadMed:
-                            <input type="text" name="unidadMed" value={this.state.unidadMed} onChange={this.handleChange} />
-                        </label>
-                        <br />
-                        <label>
-                            PrecioVenta:
-                            <input type="text" name="precioVenta" value={this.state.precioVenta} onChange={this.handleChange} />
-                        </label>             
-                        <br />
-                        <label>
-                            Almacen:
-                            <input type="text" name="almacen" value={this.state.almacen} onChange={this.handleChange} />
-                        </label>
-                        <br />
-                        <label>
-                            Categoria:
-                            <input type="text" name="categoria" value={this.state.categoria} onChange={this.handleChange} />
                         </label>
                         <input type="submit" value="Submit" />
                     </form>

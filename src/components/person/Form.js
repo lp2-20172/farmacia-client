@@ -5,7 +5,7 @@ import Avatar from 'material-ui/Avatar'
 //import Typography from 'material-ui/Typography'
 //import TextField from 'material-ui/TextField';
 
-import { save, getById, update } from '../../actions/venta-action'
+import { save, getById, update } from '../../actions/person-action'
 import { connect } from 'react-redux'
 
 class Form extends Component {
@@ -104,7 +104,7 @@ class Form extends Component {
                 <CardHeader
                     avatar={
                         <Avatar aria-label="Recipe" >
-                            R
+                            F
                           </Avatar>
                     }
                     title="User Form"
@@ -113,24 +113,14 @@ class Form extends Component {
                 <CardContent>
                     <form onSubmit={this.handleSubmit}>
                         <label>
-                        nro_doc:
-                            <input type="text" name="nro_doc" value={this.state.nro_doc} onChange={this.handleChange} />
+                            Codigo:
+                            <input type="text" name="codigo" value={this.state.codigo} onChange={this.handleChange} />
                         </label>
                         <br />
 
                         <label>
-                        fecha:
-                            <input type="text" name="fecha" value={this.state.fecha} onChange={this.handleChange} />
-                        </label>
-                        <label>
-                        total:
-                            <input type="text" name="total" value={this.state.total} onChange={this.handleChange} />
-                        </label>
-                        <br />
-
-                        <label>
-                        vendedor:
-                            <input type="text" name="vendedor" value={this.state.vendedor} onChange={this.handleChange} />
+                            Name:
+                            <input type="text" name="nombre" value={this.state.nombre} onChange={this.handleChange} />
                         </label>
                         <input type="submit" value="Submit" />
                     </form>
@@ -147,7 +137,7 @@ Form.propTypes = {
 const mapStateToProps = (state, props) => {
     if (props.match.params.id) {
         return {
-            data: state.venta.list.find(item => item.id + '' === props.match.params.id + '')
+            data: state.person.list.find(item => item.id + '' === props.match.params.id + '')
         }
     }
     return {

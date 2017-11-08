@@ -1,47 +1,47 @@
-import { DETALLEVENTA_LIST_REQUEST, DETALLEVENTA_LIST_SUCCESS, DETALLEVENTA_LIST_FAILURE } from '../actions/detalleVenta-action'
-import { DETALLEVENTA_ADD, DETALLEVENTA_FETCH, DETALLEVENTA_UPDATE, DETALLEVENTA_DELETE } from '../actions/detalleVenta-action'
+import { USERS_LIST_REQUEST, USERS_LIST_SUCCESS, USERS_LIST_FAILURE } from '../actions/users-action'
+import { USERS_ADD, USERS_FETCH, USERS_UPDATE, USERS_DELETE } from '../actions/users-action'
 
 const initialState = {
     list: [],
     data: {}
 }
 
-const detalleVentaReducer = (state = initialState, action) => {
+const usersReducer = (state = initialState, action) => {
     switch (action.type) {
 
-        case DETALLEVENTA_LIST_REQUEST: return {
+        case USERS_LIST_REQUEST: return {
             ...state,
             list: [],
             error: null
         }
-        case DETALLEVENTA_LIST_SUCCESS: return {
+        case USERS_LIST_SUCCESS: return {
             ...state,
             list: action.list,
             error: null
         }
-        case DETALLEVENTA_LIST_FAILURE: return {
+        case USERS_LIST_FAILURE: return {
             ...state,
             list: [],
             error: action.error,
         }
 
 
-        case DETALLEVENTA_ADD: return {
+        case USERS_ADD: return {
             ...state,
             //data: {} // no usado aun
         }
-        case DETALLEVENTA_UPDATE: return {
+        case USERS_UPDATE: return {
             ...state,
             //data: {} // no usado aun
         }
-        case DETALLEVENTA_FETCH: {
+        case USERS_FETCH: {
             //console.log('categoriaReducer data:' + JSON.stringify(action.data))
             return {
                 ...state,
                 data: action.data
             }
         }
-        case DETALLEVENTA_DELETE: {
+        case USERS_DELETE: {
             const id = action.data
             return {
                 ...state,
@@ -58,4 +58,4 @@ const detalleVentaReducer = (state = initialState, action) => {
 
 }
 
-export default detalleVentaReducer
+export default usersReducer
