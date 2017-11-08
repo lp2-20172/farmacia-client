@@ -4,51 +4,51 @@ import client from './'
 
 //https://github.com/brandiqa/redux-crud-example/blob/master/src/actions/contact-actions.js#L22
 
-const url = '/api-catalogo/detalleVenta/'
+const url = '/api-core/users/'
 
-export const DETALLEVENTA_LIST_REQUEST = "DETALLEVENTA_LIST_REQUEST"
-export const DETALLEVENTA_LIST_SUCCESS = 'DETALLEVENTA_LIST_SUCCESS'
-export const DETALLEVENTA_LIST_FAILURE = 'DETALLEVENTA_LIST_FAILURE'
+export const USERS_LIST_REQUEST = "USERS_LIST_REQUEST"
+export const USERS_LIST_SUCCESS = 'USERS_LIST_SUCCESS'
+export const USERS_LIST_FAILURE = 'USERS_LIST_FAILURE'
 
-export const detalleVentaList = () => ({
-    type: DETALLEVENTA_LIST_REQUEST,
+export const usersList = () => ({
+    type: USERS_LIST_REQUEST,
 })
 
-export const detalleVentaListSuccess = (list) => ({
-    type: DETALLEVENTA_LIST_SUCCESS,
+export const usersListSuccess = (list) => ({
+    type: USERS_LIST_SUCCESS,
     list
 })
 
-export const detalleVentaListFailure = error => ({
-    type: DETALLEVENTA_LIST_FAILURE,
+export const usersListFailure = error => ({
+    type: USERS_LIST_FAILURE,
     error
 })
 
-export const DETALLEVENTA_ADD = "DETALLEVENTA_ADD"
-export const DETALLEVENTA_FETCH = "DETALLEVENTA_FETCH"
-export const DETALLEVENTA_UPDATE = "DETALLEVENTA_UPDATE"
-export const DETALLEVENTA_DELETE = "DETALLEVENTA_DELETE"
+export const USERS_ADD = "USERS_ADD"
+export const USERS_FETCH = "USERS_FETCH"
+export const USERS_UPDATE = "USERS_UPDATE"
+export const USERS_DELETE = "USERS_DELETE"
 
-export const getList = (q = '') => {
+export const getList = (name = '') => {
     let params = {
         params: {
-            query: q
+            query: name
         }
     }
     return (dispatch) => {
         client.get(url, params).then(r => {
-            dispatch(detalleVentaListSuccess(r.data))
+            dispatch(usersListSuccess(r.data))
         }).catch(error => { //throw (error)
             //console.log('getList catch:' + JSON.stringify(error.response))
             if (error.response) {
-                dispatch(detalleVentaListFailure(error.response.data.detail))
+                dispatch(usersListFailure(error.response.data.detail))
             } else if (error.request) {
                 console.log(error.request);
-                dispatch(detalleVentaListFailure(JSON.stringify('Error '+error.request)))
+                dispatch(usersListFailure(JSON.stringify('Error '+error.request)))
             } else {
                 // Something happened in setting up the request that triggered an Error
                 console.log('Error', error.message);
-                dispatch(detalleVentaListFailure('Error '+error.message))
+                dispatch(usersListFailure('Error '+error.message))
             }
             //console.log(error.config);
         })
@@ -61,10 +61,10 @@ export function save(data, history) {
         return client.post(url, data)
             .then((r) => {
                 dispatch({
-                    "type": DETALLEVENTA_ADD,
+                    "type": USERS_ADD,
                     "data": r.data //no usado
                 })
-                history.push('/catalogo/detalleVentas/list')
+                history.push('/core/users/list')
             })
             .catch((error) => {
                 console.log(error)
@@ -79,7 +79,7 @@ export function getById(id) {
             .then((r) => {
                 /*
                 dispatch({
-                    "type": DETALLECOMPRA_FETCH,
+                    "type": CATEGORIA_FETCH,
                     "data": r.data 
                 })
                 */
@@ -97,10 +97,10 @@ export function update(data, history) {
         return client.put(`${url}${data.id}/`, data)
             .then((r) => {
                 dispatch({
-                    "type": DETALLEVENTA_UPDATE,
+                    "type": USERS_UPDATE,
                     "data": r.data //no usado
                 })
-                history.push('/catalogo/detalleVentas/list')
+                history.push('/core/person/list')
             })
             .catch((error) => {
                 console.log(error)
@@ -115,10 +115,10 @@ export function del(_id, history) {
             .then((r) => {
                 //console.log('deletex r:' + JSON.stringify(r))
                 dispatch({
-                    "type": DETALLEVENTA_DELETE,
+                    "type": USERS_DELETE,
                     "data": _id
                 })
-                //history.push('/catalogo/detalleVentas')
+                //history.push('/catalogo/categorias')
             })
             .catch((error) => {
                 console.log(error)

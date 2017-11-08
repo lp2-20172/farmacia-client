@@ -353,11 +353,7 @@ class RouteConfigExample extends React.Component {
 
 
 
-              <ul>
-                <li><Link to="/login">login</Link></li>
-                <li><Link to="/tacos">Tacos</Link></li>
-                <li><Link to="/sandwiches">Sandwiches</Link></li>
-              </ul>
+              
 
 
             </div>

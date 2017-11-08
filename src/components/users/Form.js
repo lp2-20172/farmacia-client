@@ -5,7 +5,7 @@ import Avatar from 'material-ui/Avatar'
 //import Typography from 'material-ui/Typography'
 //import TextField from 'material-ui/TextField';
 
-import { save, getById, update } from '../../actions/detalleVenta-action'
+import { save, getById, update } from '../../actions/users-action'
 import { connect } from 'react-redux'
 
 class Form extends Component {
@@ -24,7 +24,7 @@ class Form extends Component {
         super(props);
         this.state = {
             id: props.data ? props.data.id : null,
-            
+            codigo: props.data ? props.data.codigo : '',
             nombre: props.data ? props.data.nombre : ''
         }
     }
@@ -45,6 +45,7 @@ class Form extends Component {
         if (id) {
             //this.props.getById(id)
             //this.props.getItemAsync(id)
+
             this.props.getById(id).then(data => {
                 console.log('componentWillReceiveProps data:' + JSON.stringify(data))
                 this.setState({
@@ -53,6 +54,7 @@ class Form extends Component {
                     nombre: data.nombre
                 })
             }).catch(e => {
+
             });
         }
         */
@@ -65,7 +67,7 @@ class Form extends Component {
             this.props.getById(id).then(data => {
                 this.setState({
                     id: data.id,
-                    
+                    codigo: data.codigo,
                     nombre: data.nombre
                 });
             });
@@ -102,7 +104,7 @@ class Form extends Component {
                 <CardHeader
                     avatar={
                         <Avatar aria-label="Recipe" >
-                            R
+                            F
                           </Avatar>
                     }
                     title="User Form"
@@ -110,12 +112,15 @@ class Form extends Component {
                 />
                 <CardContent>
                     <form onSubmit={this.handleSubmit}>
-                       
+                        <label>
+                            Codigo:
+                            <input type="text" name="codigo" value={this.state.codigo} onChange={this.handleChange} />
+                        </label>
                         <br />
 
                         <label>
-                        cantidad:
-                            <input type="text" name="cantidad" value={this.state.cantidad} onChange={this.handleChange} />
+                            Name:
+                            <input type="text" name="nombre" value={this.state.nombre} onChange={this.handleChange} />
                         </label>
                         <input type="submit" value="Submit" />
                     </form>
@@ -132,7 +137,7 @@ Form.propTypes = {
 const mapStateToProps = (state, props) => {
     if (props.match.params.id) {
         return {
-            data: state.detalleVenta.list.find(item => item.id + '' === props.match.params.id + '')
+            data: state.users.list.find(item => item.id + '' === props.match.params.id + '')
         }
     }
     return {
