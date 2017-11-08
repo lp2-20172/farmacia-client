@@ -8,6 +8,7 @@ import compra from './compra-reducer'
 import venta from './venta-reducer'
 import detalleVenta from './detalleVenta-reducer'
 import detalleCompra from './detalleCompra-reducer'
+import proveedor from './proveedor-reducer'
 //import ecomm from './ecommReducer'
 import themeReducer from './appLayoutReducer'
 
@@ -21,6 +22,7 @@ var reducers = combineReducers({
   venta: venta,
   detalleVenta: detalleVenta,
   detalleCompra: detalleCompra,
+  proveedor: proveedor,
   //  ecomm: ecomm,
   theme:themeReducer,
 

@@ -13,6 +13,8 @@ import DetalleVentaList  from './detalleVentas/List'
 import DetalleVentaForm  from './detalleVentas/Form'
 import DetalleCompraList  from './detalleCompras/List'
 import DetalleCompraForm  from './detalleCompras/Form'
+import ProveedorList  from './proveedores/List'
+import ProveedorForm  from './proveedores/Form'
 
 import Login from './Login'
 
@@ -206,6 +208,29 @@ const routes = [
         title: 'Editar Detalle Compra',
         icon: 'insert_link',
         component: DetalleCompraForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/proveedores/list',
+        exact: true,
+        title: 'proveedores!',
+        icon: 'send',
+        component: ProveedorList
+      },
+      {
+        path: '/catalogo/proveedores/new',
+        exact: true,
+        title: 'proveedores New!',
+        icon: 'send',
+        component: ProveedorForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/proveedores/edit/:id',
+        exact: true,
+        title: 'proveedores Edit!',
+        icon: 'send',
+        component: ProveedorForm,
         novisible: true
       },
       
