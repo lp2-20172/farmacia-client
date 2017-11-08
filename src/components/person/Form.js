@@ -137,7 +137,7 @@ Form.propTypes = {
 const mapStateToProps = (state, props) => {
     if (props.match.params.id) {
         return {
-            data: state.users.list.find(item => item.id + '' === props.match.params.id + '')
+            data: state.person.list.find(item => item.id + '' === props.match.params.id + '')
         }
     }
     return {

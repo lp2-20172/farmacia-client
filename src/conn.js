@@ -1,6 +1,6 @@
 const config = {
     url: "http://localhost:8003/o/authorize/",
-    client: "wgC9IjmUONgwkNT3oI0oKap2RbQAWeCt9t0oqYWs",
+    client: "Zy9IlLUXDVVRA8EAtiwPoAMGvJlub3IrERBfl4SI",
     redirect: "http://localhost:3000",
     scope: "read",
     width: 400, // Width (in pixels) of login popup window. Optional, default: 400

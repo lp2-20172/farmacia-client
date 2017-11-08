@@ -77,12 +77,7 @@ export function getById(id) {
     return dispatch => {
         return client.get(`${url}${id}`)
             .then((r) => {
-                /*
-                dispatch({
-                    "type": CATEGORIA_FETCH,
-                    "data": r.data 
-                })
-                */
+                
                 return r.data
             })
             .catch((error) => {

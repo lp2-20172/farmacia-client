@@ -5,6 +5,7 @@ import CategoriaList from './categorias/List'
 import UsersList from './users/List'
 import UsersForm from './users/Form'
 import PersonList from './person/List'
+import PersonForm from './person/Form'
 import CategoriaForm from './categorias/Form'
 import ProductoList from './productos/List'
 import ProductoForm from './productos/Form'
@@ -51,6 +52,22 @@ const routes = [
 
 
       },
+      {
+        path: '/core/users/new',
+        exact: true,
+        title: 'Users New!',
+        icon: 'send',
+        component: UsersForm,
+        novisible: true
+      },
+      {
+        path: '/core/users/edit/:id',
+        exact: true,
+        title: 'Users Edit!',
+        icon: 'send',
+        component: UsersForm,
+        novisible: true
+      },
       
       {
         path: '/core/person/list',
@@ -58,6 +75,22 @@ const routes = [
         title: 'person',
         icon: 'send',
         component: PersonList
+      },
+      {
+        path: '/core/person/new',
+        exact: true,
+        title: 'Person New!',
+        icon: 'send',
+        component: PersonForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/categorias/edit/:id',
+        exact: true,
+        title: 'Categoria Edit!',
+        icon: 'send',
+        component: CategoriaForm,
+        novisible: true
       }
     ]
   },
