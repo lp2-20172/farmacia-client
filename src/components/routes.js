@@ -5,6 +5,8 @@ import CategoriaList from './categorias/List'
 import CategoriaForm from './categorias/Form'
 import ProductoList  from './productos/List'
 import ProductoForm  from './productos/Form'
+import CompraList from './compras/List'
+import CompraForm from './compras/Form'
 import VentaList  from './ventas/List'
 import VentaForm  from './ventas/Form'
 import DetalleVentaList  from './detalleVentas/List'
@@ -158,6 +160,28 @@ const routes = [
         title: 'DetalleVenta Edit!',
         icon: 'send',
         component: DetalleVentaForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/compras/list',
+        exact: true,
+        title: 'Compras',
+        icon: 'shopping_cart',
+        component: CompraList
+      },
+      {
+        path: '/catalogo/compras/new',
+        exact: true,
+        title: 'Nueva Compras',
+        component: CompraForm,
+        novisible: true
+      },
+      {
+        path: '/catalogo/compras/edit/:id',
+        exact: true,
+        title: 'Editar Compra',
+        icon: 'shopping_cart',
+        component: CompraForm,
         novisible: true
       },
       
