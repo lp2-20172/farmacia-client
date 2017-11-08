@@ -51,7 +51,7 @@ class Form extends Component {
             })
         } else {
             this.props.save(this.state, this.props.history).then(r => {
-                r.push('/detalleCompras/list')
+                r.push('/detalleCompra/list')
             }, error => {
                 throw (error)
             })
@@ -68,19 +68,19 @@ class Form extends Component {
             <input type="text"
                             value={this.state.nro_doc}
                             onChange={this.handleInputChange}
-                            name="nro_doc" />
+                            name="nro_doc" placeholder="Numero Documento"/>
                     </label><br />
                     <label>Cantidad:
             <input type="text"
                             value={this.state.cantidad}
                             onChange={this.handleInputChange}
-                            name="cantidad" />
+                            name="cantidad" placeholder="Cantidad"/>
                     </label>
                     <label>Precio Unitario:
             <input type="text"
                             value={this.state.precio_unitario}
                             onChange={this.handleInputChange}
-                            name="precio_unitario" />
+                            name="precio_unitario" placeholder="Precio Uniario" />
                     </label>
                     <input type="submit" value="Submit" />
                 </form>

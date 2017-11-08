@@ -89,7 +89,7 @@ class List extends Component {
                                     <TableRow key={index}>
                                         <TableCell numeric>{index + 1}</TableCell>
                                         <TableCell >{d.nro_doc}</TableCell>
-                                        <TableCell >{d.precio_total}</TableCell>
+                                        <TableCell >s/.{d.precio_total}.00</TableCell>
                                         <TableCell >{d.proveedor}</TableCell>
                                         <TableCell >{d.almacen}</TableCell>
                                         <TableCell >{d.comprador}</TableCell>
